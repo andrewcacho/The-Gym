@@ -1,0 +1,36 @@
+# Netlify configuration for The Gym landing page
+# Deploy this "landing-page" folder as the site root (publish directory).
+
+[build]
+  publish = "."
+  # Static site, no build step required.
+  command = ""
+
+# ---------------------------------------------------------------------------
+# Security headers applied to every route
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Force HTTPS for 2 years, including subdomains
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # Block clickjacking
+    X-Frame-Options = "DENY"
+    # Stop MIME-type sniffing
+    X-Content-Type-Options = "nosniff"
+    # Limit referrer leakage
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Lock down powerful browser features (none needed by this site)
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+    # Isolate browsing context
+    Cross-Origin-Opener-Policy = "same-origin"
+    X-Permitted-Cross-Domain-Policies = "none"
+    # Content Security Policy
+    # script-src is strict (self only). Styles allow inline + Google Fonts CSS.
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https://images.unsplash.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests"
+
+# Long cache for static assets (immutable)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

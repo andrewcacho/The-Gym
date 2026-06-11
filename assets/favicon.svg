@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0E0D0C"/>
+  <polygon points="14,10 50,10 58,32 50,54 14,54 6,32" fill="none" stroke="#EFE4D0" stroke-width="2.5"/>
+  <text x="32" y="30" text-anchor="middle" fill="#D2702F" font-family="Oswald,Arial,sans-serif" font-weight="700" font-size="9" letter-spacing="1">THE</text>
+  <text x="32" y="46" text-anchor="middle" fill="#EFE4D0" font-family="Anton,Impact,sans-serif" font-size="20" letter-spacing="1">GYM</text>
+</svg>

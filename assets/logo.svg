@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="The Gym — Strength, Fitness, Community. Established 2026">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&amp;family=Oswald:wght@500;600;700&amp;display=swap');
+      .cream { fill: #EFE4D0; }
+      .orange { fill: #D2702F; }
+      .gym { font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; letter-spacing: 6px; }
+      .label { font-family: 'Oswald', Arial, sans-serif; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Badge border -->
+  <polygon points="90,25 510,25 570,180 510,335 90,335 30,180" fill="none" stroke="#EFE4D0" stroke-width="4"/>
+  <polygon points="100,42 500,42 552,180 500,318 100,318 48,180" fill="none" stroke="#EFE4D0" stroke-width="2" stroke-dasharray="3 6"/>
+
+  <!-- THE with side rules -->
+  <line x1="232" y1="86" x2="262" y2="86" stroke="#EFE4D0" stroke-width="2"/>
+  <line x1="338" y1="86" x2="368" y2="86" stroke="#EFE4D0" stroke-width="2"/>
+  <text x="300" y="96" text-anchor="middle" class="label orange" font-size="30" letter-spacing="10">THE</text>
+
+  <!-- Stars -->
+  <text x="92" y="205" text-anchor="middle" class="orange" font-size="34">&#9733;</text>
+  <text x="508" y="205" text-anchor="middle" class="orange" font-size="34">&#9733;</text>
+
+  <!-- GYM -->
+  <text x="305" y="232" text-anchor="middle" class="gym cream" font-size="150">GYM</text>
+
+  <!-- Tagline -->
+  <text x="300" y="278" text-anchor="middle" class="label cream" font-size="23" letter-spacing="4">
+    STRENGTH <tspan class="orange">&#8226;</tspan> FITNESS <tspan class="orange">&#8226;</tspan> COMMUNITY
+  </text>
+
+  <!-- EST -->
+  <text x="300" y="306" text-anchor="middle" class="label orange" font-size="17" letter-spacing="6">EST. 2026</text>
+
+  <!-- Barbell -->
+  <g class="cream" transform="translate(300,326)">
+    <rect x="-46" y="-3" width="92" height="6" rx="2"/>
+    <rect x="-58" y="-9" width="9" height="18" rx="2"/>
+    <rect x="-69" y="-6" width="8" height="12" rx="2"/>
+    <rect x="49" y="-9" width="9" height="18" rx="2"/>
+    <rect x="61" y="-6" width="8" height="12" rx="2"/>
+  </g>
+</svg>
