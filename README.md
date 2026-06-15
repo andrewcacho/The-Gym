@@ -19,34 +19,38 @@ landing-page/
     └── script.js       # Mobile nav + reveal-on-scroll (no external JS libs)
 ```
 
-## Deploy to Netlify
+## Deploy to Cloudflare Pages (Git)
 
-**Option A: drag & drop (fastest)**
-1. Go to https://app.netlify.com/drop
-2. Drag the entire `landing-page` folder onto the page.
-3. Done. Netlify gives you a live URL. Rename the site under Site settings if you like.
+1. Push this repo to GitHub (already set up).
+2. In the Cloudflare dashboard: **Workers & Pages -> Create -> Pages -> Connect to Git**.
+3. Pick this repository. Build settings:
+   - **Framework preset:** None
+   - **Build command:** leave blank
+   - **Build output directory:** `/` (the repo root is the site)
+4. Click **Save and Deploy**. You get a `*.pages.dev` URL.
+5. **Custom domain:** Pages project -> **Custom domains -> Set up a domain** -> enter your
+   domain. Cloudflare adds the DNS record and provisions HTTPS automatically.
 
-**Option B: Git (recommended for ongoing edits)**
-1. Push this folder to a GitHub repo.
-2. In Netlify: **Add new site → Import an existing project** → pick the repo.
-3. Set **Publish directory** to `landing-page` (or the repo root if that's where these files live).
-   Build command: leave blank. Click **Deploy**.
+From then on: edit -> commit -> push, and Cloudflare auto-deploys. `_headers` applies the
+security + cache rules (Cloudflare reads it natively; `netlify.toml` is ignored here and
+kept only as a Netlify fallback).
 
-After deploy, point your custom domain under **Domain settings** and Netlify will
-provision HTTPS automatically (the security headers already assume HTTPS).
+## The opening-list form (Web3Forms)
 
-## The opening-list form (Netlify Forms)
-
-The "Join the Opening List" form uses **Netlify Forms**, no backend needed.
-- Submissions appear in your Netlify dashboard under **Forms → opening-list**.
-- A hidden honeypot field (`bot-field`) filters basic spam.
-- On success, visitors are sent to `thank-you.html`.
-- To get email notifications: **Forms → Settings → Form notifications → Add email notification**.
-- Want stronger spam protection? Enable reCAPTCHA in the same settings panel.
+The form posts to **Web3Forms** (host-agnostic, free, ~250 submissions/month), so it works
+on Cloudflare, Netlify, or anywhere.
+- Get a free access key at https://web3forms.com (enter the destination email; the key is
+  emailed to you instantly, no account required).
+- In `index.html`, replace `YOUR_WEB3FORMS_ACCESS_KEY` with that key.
+- Replace `REPLACE-WITH-YOUR-DOMAIN` in the form's `redirect` field with your live domain so
+  successful submissions land on `thank-you.html`.
+- Spam is filtered by the hidden `botcheck` honeypot.
+- Submissions are emailed to the address tied to your access key (currently intended for
+  thegymsfc.tx@gmail.com).
 
 ## Security
 
-`netlify.toml` ships hardened headers on every route:
+`_headers` ships hardened headers on every route (Cloudflare Pages reads this file; `netlify.toml` mirrors it for Netlify):
 - **Content-Security-Policy**: scripts restricted to same-origin (no inline JS);
   styles + Google Fonts allowlisted.
 - **Strict-Transport-Security** (HSTS, 2-year, preload-ready)
