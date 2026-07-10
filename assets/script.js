@@ -37,4 +37,34 @@
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
+
+  // Sign-up modal (RhinoFit store)
+  var modal = document.getElementById("signupModal");
+  if (modal) {
+    var frame = modal.querySelector("iframe");
+    var lastFocus = null;
+    var openModal = function (e) {
+      if (e) e.preventDefault();
+      lastFocus = document.activeElement;
+      if (frame && !frame.src && frame.dataset.src) frame.src = frame.dataset.src;
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+      var c = modal.querySelector(".modal__close");
+      if (c) c.focus();
+    };
+    var closeModal = function () {
+      modal.hidden = true;
+      document.body.classList.remove("modal-open");
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+    document.querySelectorAll("[data-signup]").forEach(function (el) {
+      el.addEventListener("click", openModal);
+    });
+    modal.querySelectorAll("[data-close]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
+  }
 })();
