@@ -63,6 +63,8 @@
   "makesOffer": [
     { "@type": "Offer", "name": "Individual Membership", "price": "45", "priceCurrency": "USD" },
     { "@type": "Offer", "name": "Couples Membership", "price": "80", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Family Membership (3)", "price": "115", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Family Membership (4)", "price": "135", "priceCurrency": "USD" },
     { "@type": "Offer", "name": "Military, First Responder & Student Membership", "price": "40", "priceCurrency": "USD" }
   ],
   "knowsAbout": ["strength training", "personal training", "nutrition coaching", "faith-based fitness", "recovery and sauna"]
@@ -459,7 +461,7 @@
       <h2>Simple, honest pricing</h2>
       <p class="lede center">No confusing tiers, no pressure. Pick the membership that fits your life, and add recovery whenever you're ready.</p>
     </div>
-    <div class="grid g3" style="margin-top:46px;align-items:stretch">
+    <div class="grid" style="margin-top:46px;align-items:stretch;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
       <div class="plan reveal">
         <span class="kicker">Individual</span>
         <div class="price">$45<span>/month</span></div>
@@ -486,6 +488,18 @@
         <a href="https://my.rhinofit.ca/store/index/6ca6be7a" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join Now</a>
       </div>
       <div class="plan reveal">
+        <span class="kicker">Family</span>
+        <div class="price">$115<span>/month</span></div>
+        <p style="color:var(--cream-dim);font-size:.94rem">Full gym access for the whole family. Tanning and sauna not included.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Family of 3: $115/mo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Family of 4: $135/mo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Full access for everyone</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Kids area for members</li>
+        </ul>
+        <a href="https://my.rhinofit.ca/store/index/6ca6be7a" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Join Now</a>
+      </div>
+      <div class="plan reveal">
         <span class="kicker">Military · First Responder · Student</span>
         <div class="price">$40<span>/month</span></div>
         <p style="color:var(--cream-dim);font-size:.94rem">A thank-you rate for those who serve and those still in school.</p>
@@ -504,8 +518,8 @@
         <span class="eyebrow">Recovery add-ons</span>
         <h3 style="font-size:1.3rem;margin:12px 0 6px">Add to any membership</h3>
         <div class="rate"><span>Tanning</span><b>+$20/mo</b></div>
-        <div class="rate"><span>Sauna</span><b>+$20/mo</b></div>
-        <div class="rate"><span>Tanning &amp; Sauna</span><b>+$35/mo</b></div>
+        <div class="rate"><span>Sauna</span><b>+$10/mo</b></div>
+        <div class="rate"><span>Tanning &amp; Sauna</span><b>+$25/mo</b></div>
         <p class="rate-head">Recovery only · no gym access</p>
         <div class="rate"><span>Tanning only</span><b>$35/mo</b></div>
         <div class="rate"><span>Sauna only</span><b>$40/mo</b></div>
@@ -513,10 +527,9 @@
       </div>
       <div class="panel reveal">
         <span class="eyebrow">Just visiting?</span>
-        <h3 style="font-size:1.3rem;margin:12px 0 6px">Day passes &amp; single sessions</h3>
-        <div class="rate"><span>Gym day pass</span><b>$10</b></div>
-        <div class="rate"><span>Single tanning session</span><b>$8</b></div>
-        <div class="rate"><span>Single sauna session</span><b>$10</b></div>
+        <h3 style="font-size:1.3rem;margin:12px 0 6px">Day passes</h3>
+        <div class="rate"><span>Day pass</span><b>$15</b></div>
+        <div class="rate"><span>7-day pass</span><b>$30</b></div>
         <p style="color:var(--cream-dim);font-size:.94rem;margin-top:22px">Personal training and nutrition &amp; wellness coaching are available too. They're the clearest path to structure, accountability, and lasting change. Ask us about coaching on your tour.</p>
         <a href="#join" class="btn btn-ghost" style="margin-top:18px">Ask About Coaching</a>
       </div>
@@ -608,7 +621,7 @@
       <h2>Frequently asked</h2>
     </div>
     <div class="faq" style="margin-top:40px">
-      <details><summary>How much is membership?<span class="pm" aria-hidden="true">+</span></summary><div class="ans">Individual gym access is $45/month, Couples is $80/month, and our Military, First Responder &amp; Student rate is $40/month (valid ID required). Add tanning or sauna for $20/month each, or both for $35/month. Just visiting? A gym day pass is $10. All memberships are month-to-month. See the full breakdown above.</div></details>
+      <details><summary>How much is membership?<span class="pm" aria-hidden="true">+</span></summary><div class="ans">Individual is $45/month, Couples is $80/month, Family is $115/month (family of 3) or $135/month (family of 4), and our Military, First Responder &amp; Student rate is $40/month (valid ID required). Add tanning for $20/month, sauna for $10/month, or both for $25/month. Just visiting? A day pass is $15 and a 7-day pass is $30. All memberships are month-to-month. See the full breakdown above.</div></details>
       <details><summary>Do I need experience to start?<span class="pm" aria-hidden="true">+</span></summary><div class="ans">Not at all. Zero experience required. You don't have to know what you're doing yet. We'll help you start, and you'll never be judged for being a beginner.</div></details>
       <details><summary>Will someone show me how to use the equipment?<span class="pm" aria-hidden="true">+</span></summary><div class="ans">Yes. We'll walk you through the space and the equipment so you feel confident. Want a deeper plan? Personal training is there whenever you're ready.</div></details>
       <details><summary>Do you offer personal training and coaching?<span class="pm" aria-hidden="true">+</span></summary><div class="ans">Yes, both personal training and nutrition &amp; wellness coaching. It's the clearest path to structure, accountability, and lasting transformation.</div></details>
@@ -696,6 +709,7 @@
           <a href="#opening">Visit Us</a>
           <a href="https://my.rhinofit.ca/store/index/6ca6be7a" target="_blank" rel="noopener noreferrer" >Join Now</a>
           <a href="#join">Schedule a Tour</a>
+          <a href="assets/membership-agreement.pdf" target="_blank" rel="noopener">Membership Agreement (PDF)</a>
         </div>
         <div class="foot-col">
           <h4>Get in Touch</h4>
